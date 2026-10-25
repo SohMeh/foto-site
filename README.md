@@ -1,6 +1,6 @@
 # Foto's website
 
-The landing page for Foto, the Mac menu-bar app that turns screenshots into actions. It is a static page built with Vite and TypeScript, with no framework. GitHub Pages builds and publishes it on every push to `main` (`.github/workflows/pages.yml`).
+The landing page for Foto, the Mac menu-bar app that turns screenshots into actions, live at https://www.foto-ai.store. It is a static page built with Vite and TypeScript, with no framework. Vercel builds and serves it from `main` on the custom domain (`foto-ai.store` redirects to `www`), and GitHub Pages publishes the same build at https://sohmeh.github.io/foto-site/ (`.github/workflows/pages.yml`).
 
 ## Run it
 
