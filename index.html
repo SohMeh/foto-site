@@ -281,6 +281,10 @@
               <div class="cta-row">
                 <a class="btn solid lg" id="dl-button" href="./download/Foto-0.1.0-arm64.dmg" download><span class="i-download"></span>Download Foto</a>
               </div>
+              <div class="banner warn first-open">
+                <span class="i-triangle-alert"></span>
+                <span><b>The first time, macOS says "Foto" Not Opened</b>That is expected: Foto isn't notarized by Apple yet. Click Done, then follow the steps here to open it. You only do this once.</span>
+              </div>
               <ul class="needs">
                 <li>A Mac with Apple silicon (M1 or later)</li>
                 <li>macOS 14 Sonoma or later</li>
@@ -293,10 +297,12 @@
             <h3>Opening it the first time</h3>
             <ol>
               <li>Open the download and drag Foto into Applications.</li>
-              <li>Open Foto. macOS says it can't check Foto for malicious software, because Foto is not notarized by Apple yet.</li>
-              <li>Go to System Settings, then Privacy &amp; Security, and choose Open Anyway next to Foto. On macOS 14 you can instead Control-click Foto in Applications and choose Open.</li>
+              <li>Open Foto. macOS shows <b>"Foto" Not Opened</b> and says Apple could not verify it is free of malware. Click <b>Done</b>.</li>
+              <li>Open <b>System Settings</b>, then <b>Privacy &amp; Security</b>. Scroll down to Security, where it says Foto was blocked, and click <b>Open Anyway</b>.</li>
+              <li>Confirm with your password or Touch ID, then choose <b>Open Anyway</b> once more. macOS remembers this.</li>
               <li>Foto opens Set up. Paste your Anthropic key, then take a screenshot.</li>
             </ol>
+            <p class="fine">On macOS 14 you can instead Control-click Foto in Applications and choose Open.</p>
             <p class="fine">macOS also asks before Foto can see your Desktop folder and your calendars, and asks about Mail only if you turn on Mail Sense.</p>
           </div>
         </div>
@@ -351,7 +357,7 @@
           </details>
           <details>
             <summary>Why does macOS warn me when I open it?</summary>
-            <p>Foto is not notarized by Apple yet. Open it once through System Settings, Privacy &amp; Security, Open Anyway, and macOS remembers your choice. Until Foto is notarized, an update may ask for its permissions again.</p>
+            <p>Foto is not notarized by Apple yet, so the first time macOS shows "Foto" Not Opened. Click Done, then go to System Settings, Privacy &amp; Security, and click Open Anyway next to Foto. macOS remembers your choice. Until Foto is notarized, an update may ask for its permissions again.</p>
           </details>
         </div>
       </div>

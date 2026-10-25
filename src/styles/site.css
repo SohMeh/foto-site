@@ -271,6 +271,9 @@ h3{font-size:20px;font-weight:700;font-variation-settings:"SOFT" 50,"WONK" 1;let
 .dl-main{display:flex;gap:28px;align-items:flex-start;padding:clamp(28px,4vw,52px)}
 .app-icon{flex:0 0 auto;filter:drop-shadow(0 10px 18px rgba(35,48,42,.18))}
 .dl-meta{font-size:15px;color:var(--muted);margin-top:10px}
+.first-open{margin-top:18px;font-size:14px}
+.first-open svg{width:18px;height:18px}
+.dl-open ol b{color:var(--ink)}
 .needs{list-style:none;display:flex;flex-direction:column;gap:7px;margin-top:24px;font-size:15.5px;color:var(--slate)}
 .needs li{display:flex;gap:10px;align-items:flex-start}
 .needs li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--mint-500);flex:0 0 auto;margin-top:9px}
