@@ -1,0 +1,60 @@
+<!doctype html>
+<!-- The social preview (public/og.png), drawn with the site's own styles and Foto's real card.
+     Open http://127.0.0.1:5310/scripts/og.html with the dev server running and capture 1200x630. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1&family=Plus+Jakarta+Sans:wght@300..800&family=DM+Mono:wght@400;500&display=swap" />
+  <style>
+    html,body{margin:0;width:1200px;height:630px;overflow:hidden}
+    .og{position:relative;width:1200px;height:630px;display:grid;grid-template-columns:1fr 392px;gap:28px;align-items:center;padding:0 64px;box-sizing:border-box;background:var(--paper)}
+    .og svg.hills{position:absolute;inset:auto 0 0 0;width:100%;height:240px;z-index:0}
+    .og>*{position:relative;z-index:1}
+    .og h1{font-size:76px;margin-top:22px}
+    .og .note{font-size:21px;color:var(--slate);margin-top:22px;max-width:30ch}
+    .og .lockup .mark{grid-template-columns:repeat(2,12px);grid-template-rows:repeat(2,12px);gap:3px}
+    .og .lockup .mark i{border-radius:4px}
+    .og .lockup .wm{font-size:30px}
+    .og .card-slot{display:flex;flex-direction:column;gap:8px}
+    .og .helper-card{animation:none}
+  </style>
+  <script type="module">
+    import '/src/styles/tokens.css';
+    import '/src/styles/app.css';
+    import '/src/styles/site.css';
+    import { decisionCard } from '/src/demo/card.ts';
+    import { targets } from '/src/demo/desk.ts';
+    import { WORLD, at, fmt } from '/src/demo/time.ts';
+    import { flyerHTML } from '/src/demo/shots.ts';
+    import { el, miniCopy } from '/src/demo/dom.ts';
+    const stage = el(`<div style="position:absolute;left:-9999px;width:400px;height:300px">${flyerHTML()}</div>`);
+    document.body.append(stage);
+    const thumb = miniCopy(stage, 52, 52, { width: 400, height: 300 });
+    stage.remove();
+    const start = at(WORLD.friday, 19);
+    const card = decisionCard({
+      id: 'og', shot: 'flyer', source: 'screenshot', at: new Date(), findings: [], thumb,
+      title: 'Ceramics Night at The Clay Room', summary: "A beginners' wheel-throwing evening on Friday. $35, clay and glaze included.",
+      read: `Ceramics Night. Wheel throwing for total beginners. ${fmt.long(WORLD.friday)}, 7–9 PM. 214 Mercer St, Studio B.`,
+      actions: [{ id: 'og-event', kind: 'calendar_event', title: 'Ceramics Night', start, end: at(WORLD.friday, 21), ticked: true, status: 'proposed', targets: targets(),
+        findings: [{ tone: 'ok', text: 'Nothing else on your calendars then' }, { tone: 'ok', text: 'The date and time match the screenshot', detail: `"${fmt.long(WORLD.friday)}, 7–9 PM"` }] }],
+    }, { fixed: true });
+    document.querySelector('.card-slot').append(card.el);
+  </script>
+</head>
+<body>
+  <div class="og">
+    <svg class="hills" viewBox="0 0 1200 240" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 120C200 60 400 100 640 70S1000 40 1200 90V240H0Z" fill="#DFF5EA"/>
+      <path d="M0 170C260 120 520 160 780 130S1080 120 1200 150V240H0Z" fill="#C3EBD8"/>
+      <path d="M0 210C300 180 640 210 960 190S1140 190 1200 200V240H0Z" fill="#9FDDC2"/>
+    </svg>
+    <div>
+      <span class="lockup"><span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="wm">foto<i class="dot"></i></span></span>
+      <h1>Screenshot it.<br />Foto takes it from&nbsp;there.</h1>
+      <p class="note">A Mac menu-bar app. Free for now, with your own Anthropic API key.</p>
+    </div>
+    <div class="card-slot"></div>
+  </div>
+</body>
+</html>

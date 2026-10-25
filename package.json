@@ -1,0 +1,17 @@
+{
+  "name": "foto-site",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "The website for Foto, the Mac app that turns screenshots into actions.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit -p tsconfig.json && vite build",
+    "preview": "vite preview",
+    "check": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "7.0.2",
+    "vite": "8.3.0"
+  }
+}
